@@ -8,7 +8,7 @@ export default function Results({ products }) {
             {products.map((product) => (
                 <li
                     key={product.id}
-                    className="flex bg-white h-28 w-full sm:w-80 rounded-3xl p-4 gap-2"
+                    className="flex bg-white h-28 w-full sm:w-80 rounded-3xl p-4 gap-2 border-2 border-green-800 shadow-xl hover:shadow-2xl"
                 >
                     <div className="flex-1 w-full h-full relative">
                         <Image

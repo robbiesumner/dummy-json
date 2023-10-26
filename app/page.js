@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/header.js";
 import Results from "./components/results.js";
 
 export default function Home() {
+    // load all products on first render
+    useEffect(() => {
+        handleSearch("");
+    }, []);
+
+
     const searchBaseUrl = "https://dummyjson.com/products/search?q=";
     const [products, setProducts] = useState([]);
 
