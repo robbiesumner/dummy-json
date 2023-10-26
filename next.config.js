@@ -5,7 +5,7 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: "i.dummyjson.com",
-                port: '',
+                port: "",
                 pathname: "/data/products/**",
             },
         ],

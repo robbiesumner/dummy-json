@@ -11,11 +11,11 @@ export default function Home() {
         handleSearch("");
     }, []);
 
-
     const searchBaseUrl = "https://dummyjson.com/products/search?q=";
     const [products, setProducts] = useState([]);
 
     const handleSearch = (search) => {
+        // function for fetching from api with search from header
         fetch(searchBaseUrl + search)
             .catch((err) => console.log(err))
             .then((res) => res.json())
