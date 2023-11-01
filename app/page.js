@@ -23,10 +23,12 @@ export default function Home() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-4">
+        <main className="flex min-h-screen flex-col items-center justify-between p-4 max-w-7xl m-auto">
             <Header onSearch={handleSearch} />
             <Results products={products} />
-            <footer>Footer</footer>
+            {/* Free space under results if not enough */}
+            <div className="flex-1"></div>
+            <footer>DummyProducts&#9415;</footer>
         </main>
     );
 }

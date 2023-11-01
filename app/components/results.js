@@ -4,7 +4,7 @@ export default function Results({ products }) {
     console.log(products);
 
     return (
-        <ul className="flex flex-wrap gap-5">
+        <ul className="flex justify-center flex-wrap gap-5">
             {products.map((product) => (
                 <li
                     key={product.id}
