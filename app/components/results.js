@@ -3,13 +3,20 @@ import Image from "next/image";
 export default function Results({ products }) {
     console.log(products);
 
-    return (
-        <ul className="flex justify-center flex-wrap gap-5">
-            {products.map((product) => (
-                <li
-                    key={product.id}
-                    className="flex bg-white h-28 w-full sm:w-96 rounded-3xl p-4 gap-2 border-2 border-green-800 shadow-xl hover:shadow-2xl"
-                >
+    if (products.length === 0) { // if api returns no products
+        return (
+            <div className="flex justify-center h-96">
+                <p className="text-2xl">No products found...</p>
+            </div>
+        );
+    } else { // products found!
+        return (
+            <ul className="flex justify-center flex-wrap gap-5">
+                {products.map((product) => (
+                    <li
+                        key={product.id}
+                        className="flex bg-white h-28 w-full sm:w-96 rounded-3xl p-4 gap-2 border-2 border-green-800 shadow-xl hover:shadow-2xl"
+                    >
                         <div className="flex-1 w-full h-full relative">
                             <Image
                                 src={product.thumbnail}
@@ -38,8 +45,9 @@ export default function Results({ products }) {
                                 </span>
                             </p>
                         </div>
-                </li>
-            ))}
-        </ul>
-    );
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 }
