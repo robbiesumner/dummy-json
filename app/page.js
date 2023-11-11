@@ -24,7 +24,7 @@ export default function Home() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-4 max-w-7xl m-auto">
-            <Header onSearch={handleSearch} />
+            <Header onSearch={handleSearch} visibleSearch={true}/>
             <Results products={products} />
             {/* Free space under results if not enough */}
             <div className="flex-1"></div>
